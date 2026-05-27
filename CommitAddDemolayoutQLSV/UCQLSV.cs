@@ -12,6 +12,7 @@ namespace CommitAddDemolayoutQLSV
 {
     public partial class UCQLSV : UserControl
     {
+        databaseDataContext db = new databaseDataContext();
         public UCQLSV()
         {
             InitializeComponent();
@@ -84,7 +85,26 @@ namespace CommitAddDemolayoutQLSV
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            tbl_sinhvien sinhvien = new tbl_sinhvien();
+            sinhvien.id = txtMSSV.Text;
+            sinhvien.hoten = txtHoTen.Text;
+            sinhvien.gioitinh = cboGioiTinh.Text;
+            sinhvien.ngaysinh = DateTime.Parse(dtpNgaySinh.Text);
 
+            try
+            {
+                db.tbl_sinhviens.InsertOnSubmit(sinhvien);
+                db.SubmitChanges();
+                MessageBox.Show("Thêm sinh viên thành công!");
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            //db.tbl_sinhviens.InsertOnSubmit(sinhvien);
+            //db.SubmitChanges();
+            //LoadData();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -140,6 +160,26 @@ namespace CommitAddDemolayoutQLSV
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void UCQLSV_Load(object sender, EventArgs e)
+        {
+            LoadData();
+            LoadDSLH4CBX();
+        }
+        public void LoadData()
+        {
+            List<tbl_sinhvien> dSSV = db.tbl_sinhviens.ToList();
+            dgv_DSSV.DataSource = dSSV;
+        }
+
+        public void LoadDSLH4CBX() // Load dữ liệu cho comboBox
+        {
+            List<tbl_lophoc> dSLH = db.tbl_lophocs.ToList();
+            //cboMaLop.Text = "68PM12";
+            cboMaLop.DataSource = dSLH;
+            cboMaLop.DisplayMember = "tenLop"; 
+            cboMaLop.ValueMember = "malop"; 
         }
     }
 }

@@ -35,11 +35,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.dgvLopHoc = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnTimLop = new System.Windows.Forms.Button();
             this.txtTimKiemLop = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -56,21 +51,22 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pnlLopHoc.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLopHoc)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLopHoc
             // 
             this.pnlLopHoc.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlLopHoc.Controls.Add(this.dataGridView1);
             this.pnlLopHoc.Controls.Add(this.btnXemDanhSachSV);
             this.pnlLopHoc.Controls.Add(this.label7);
             this.pnlLopHoc.Controls.Add(this.button1);
             this.pnlLopHoc.Controls.Add(this.button2);
             this.pnlLopHoc.Controls.Add(this.button3);
             this.pnlLopHoc.Controls.Add(this.button4);
-            this.pnlLopHoc.Controls.Add(this.dgvLopHoc);
             this.pnlLopHoc.Controls.Add(this.btnTimLop);
             this.pnlLopHoc.Controls.Add(this.txtTimKiemLop);
             this.pnlLopHoc.Controls.Add(this.label8);
@@ -104,6 +100,7 @@
             this.label7.Size = new System.Drawing.Size(127, 16);
             this.label7.TabIndex = 27;
             this.label7.Text = "Trang 1/1 | 3 bản ghi";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // button1
             // 
@@ -140,48 +137,6 @@
             this.button4.TabIndex = 23;
             this.button4.Text = "<<";
             this.button4.UseVisualStyleBackColor = true;
-            // 
-            // dgvLopHoc
-            // 
-            this.dgvLopHoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvLopHoc.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgvLopHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLopHoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.dgvLopHoc.Location = new System.Drawing.Point(493, 128);
-            this.dgvLopHoc.Name = "dgvLopHoc";
-            this.dgvLopHoc.RowHeadersVisible = false;
-            this.dgvLopHoc.RowHeadersWidth = 51;
-            this.dgvLopHoc.RowTemplate.Height = 24;
-            this.dgvLopHoc.Size = new System.Drawing.Size(1062, 445);
-            this.dgvLopHoc.TabIndex = 22;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã ID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Mã lớp";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Tên lớp";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Ghi chú";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // btnTimLop
             // 
@@ -331,6 +286,16 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Mã ID:";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(497, 120);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1125, 472);
+            this.dataGridView1.TabIndex = 29;
+            // 
             // UCQLLH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -340,9 +305,9 @@
             this.Size = new System.Drawing.Size(1645, 705);
             this.pnlLopHoc.ResumeLayout(false);
             this.pnlLopHoc.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLopHoc)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -356,11 +321,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.DataGridView dgvLopHoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Button btnTimLop;
         private System.Windows.Forms.TextBox txtTimKiemLop;
         private System.Windows.Forms.Label label8;
@@ -377,5 +337,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
