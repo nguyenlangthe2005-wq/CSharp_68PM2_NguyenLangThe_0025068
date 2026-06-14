@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             this.pnlLopHoc = new System.Windows.Forms.Panel();
+            this.dgv_DSLH = new System.Windows.Forms.DataGridView();
             this.btnXemDanhSachSV = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.btnTimLop = new System.Windows.Forms.Button();
-            this.txtTimKiemLop = new System.Windows.Forms.TextBox();
+            this.lblPhanTrang = new System.Windows.Forms.Label();
+            this.btnTrangCuoi = new System.Windows.Forms.Button();
+            this.btnTrangSau = new System.Windows.Forms.Button();
+            this.btnTrangTruoc = new System.Windows.Forms.Button();
+            this.btnTrangDau = new System.Windows.Forms.Button();
+            this.btnTim = new System.Windows.Forms.Button();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnLamMoiLop = new System.Windows.Forms.Button();
-            this.btnXoaLop = new System.Windows.Forms.Button();
-            this.btnSuaLop = new System.Windows.Forms.Button();
-            this.btnThemLop = new System.Windows.Forms.Button();
+            this.btnLamMoi = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.txtTenLop = new System.Windows.Forms.TextBox();
@@ -51,29 +52,28 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pnlLopHoc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_DSLH)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLopHoc
             // 
             this.pnlLopHoc.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlLopHoc.Controls.Add(this.dataGridView1);
+            this.pnlLopHoc.Controls.Add(this.dgv_DSLH);
             this.pnlLopHoc.Controls.Add(this.btnXemDanhSachSV);
-            this.pnlLopHoc.Controls.Add(this.label7);
-            this.pnlLopHoc.Controls.Add(this.button1);
-            this.pnlLopHoc.Controls.Add(this.button2);
-            this.pnlLopHoc.Controls.Add(this.button3);
-            this.pnlLopHoc.Controls.Add(this.button4);
-            this.pnlLopHoc.Controls.Add(this.btnTimLop);
-            this.pnlLopHoc.Controls.Add(this.txtTimKiemLop);
+            this.pnlLopHoc.Controls.Add(this.lblPhanTrang);
+            this.pnlLopHoc.Controls.Add(this.btnTrangCuoi);
+            this.pnlLopHoc.Controls.Add(this.btnTrangSau);
+            this.pnlLopHoc.Controls.Add(this.btnTrangTruoc);
+            this.pnlLopHoc.Controls.Add(this.btnTrangDau);
+            this.pnlLopHoc.Controls.Add(this.btnTim);
+            this.pnlLopHoc.Controls.Add(this.txtTimKiem);
             this.pnlLopHoc.Controls.Add(this.label8);
-            this.pnlLopHoc.Controls.Add(this.btnLamMoiLop);
-            this.pnlLopHoc.Controls.Add(this.btnXoaLop);
-            this.pnlLopHoc.Controls.Add(this.btnSuaLop);
-            this.pnlLopHoc.Controls.Add(this.btnThemLop);
+            this.pnlLopHoc.Controls.Add(this.btnLamMoi);
+            this.pnlLopHoc.Controls.Add(this.btnXoa);
+            this.pnlLopHoc.Controls.Add(this.btnSua);
+            this.pnlLopHoc.Controls.Add(this.btnThem);
             this.pnlLopHoc.Controls.Add(this.groupBox2);
             this.pnlLopHoc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlLopHoc.Location = new System.Drawing.Point(0, 0);
@@ -81,6 +81,17 @@
             this.pnlLopHoc.Size = new System.Drawing.Size(1645, 705);
             this.pnlLopHoc.TabIndex = 1;
             this.pnlLopHoc.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlLopHoc_Paint);
+            // 
+            // dgv_DSLH
+            // 
+            this.dgv_DSLH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_DSLH.Location = new System.Drawing.Point(497, 120);
+            this.dgv_DSLH.Name = "dgv_DSLH";
+            this.dgv_DSLH.RowHeadersWidth = 51;
+            this.dgv_DSLH.RowTemplate.Height = 24;
+            this.dgv_DSLH.Size = new System.Drawing.Size(1125, 472);
+            this.dgv_DSLH.TabIndex = 29;
+            this.dgv_DSLH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DSLH_CellClick);
             // 
             // btnXemDanhSachSV
             // 
@@ -91,69 +102,75 @@
             this.btnXemDanhSachSV.TabIndex = 28;
             this.btnXemDanhSachSV.Text = "Xem danh sách sinh viên";
             this.btnXemDanhSachSV.UseVisualStyleBackColor = false;
+            this.btnXemDanhSachSV.Click += new System.EventHandler(this.btnXemDanhSachSV_Click);
             // 
-            // label7
+            // lblPhanTrang
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(831, 622);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(127, 16);
-            this.label7.TabIndex = 27;
-            this.label7.Text = "Trang 1/1 | 3 bản ghi";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.lblPhanTrang.AutoSize = true;
+            this.lblPhanTrang.Location = new System.Drawing.Point(831, 622);
+            this.lblPhanTrang.Name = "lblPhanTrang";
+            this.lblPhanTrang.Size = new System.Drawing.Size(127, 16);
+            this.lblPhanTrang.TabIndex = 27;
+            this.lblPhanTrang.Text = "Trang 1/1 | 3 bản ghi";
+            this.lblPhanTrang.Click += new System.EventHandler(this.label7_Click);
             // 
-            // button1
+            // btnTrangCuoi
             // 
-            this.button1.Location = new System.Drawing.Point(1230, 598);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(59, 65);
-            this.button1.TabIndex = 26;
-            this.button1.Text = ">>";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnTrangCuoi.Location = new System.Drawing.Point(1230, 598);
+            this.btnTrangCuoi.Name = "btnTrangCuoi";
+            this.btnTrangCuoi.Size = new System.Drawing.Size(59, 65);
+            this.btnTrangCuoi.TabIndex = 26;
+            this.btnTrangCuoi.Text = ">>";
+            this.btnTrangCuoi.UseVisualStyleBackColor = true;
+            this.btnTrangCuoi.Click += new System.EventHandler(this.btnTrangCuoi_Click);
             // 
-            // button2
+            // btnTrangSau
             // 
-            this.button2.Location = new System.Drawing.Point(1165, 598);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(59, 65);
-            this.button2.TabIndex = 25;
-            this.button2.Text = ">";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnTrangSau.Location = new System.Drawing.Point(1165, 598);
+            this.btnTrangSau.Name = "btnTrangSau";
+            this.btnTrangSau.Size = new System.Drawing.Size(59, 65);
+            this.btnTrangSau.TabIndex = 25;
+            this.btnTrangSau.Text = ">";
+            this.btnTrangSau.UseVisualStyleBackColor = true;
+            this.btnTrangSau.Click += new System.EventHandler(this.btnTrangSau_Click);
             // 
-            // button3
+            // btnTrangTruoc
             // 
-            this.button3.Location = new System.Drawing.Point(558, 598);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(59, 65);
-            this.button3.TabIndex = 24;
-            this.button3.Text = "<";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnTrangTruoc.Location = new System.Drawing.Point(558, 598);
+            this.btnTrangTruoc.Name = "btnTrangTruoc";
+            this.btnTrangTruoc.Size = new System.Drawing.Size(59, 65);
+            this.btnTrangTruoc.TabIndex = 24;
+            this.btnTrangTruoc.Text = "<";
+            this.btnTrangTruoc.UseVisualStyleBackColor = true;
+            this.btnTrangTruoc.Click += new System.EventHandler(this.btnTrangTruoc_Click);
             // 
-            // button4
+            // btnTrangDau
             // 
-            this.button4.Location = new System.Drawing.Point(493, 598);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(59, 65);
-            this.button4.TabIndex = 23;
-            this.button4.Text = "<<";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnTrangDau.Location = new System.Drawing.Point(493, 598);
+            this.btnTrangDau.Name = "btnTrangDau";
+            this.btnTrangDau.Size = new System.Drawing.Size(59, 65);
+            this.btnTrangDau.TabIndex = 23;
+            this.btnTrangDau.Text = "<<";
+            this.btnTrangDau.UseVisualStyleBackColor = true;
+            this.btnTrangDau.Click += new System.EventHandler(this.btnTrangDau_Click);
             // 
-            // btnTimLop
+            // btnTim
             // 
-            this.btnTimLop.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnTimLop.Location = new System.Drawing.Point(914, 54);
-            this.btnTimLop.Name = "btnTimLop";
-            this.btnTimLop.Size = new System.Drawing.Size(169, 56);
-            this.btnTimLop.TabIndex = 21;
-            this.btnTimLop.Text = "Tìm";
-            this.btnTimLop.UseVisualStyleBackColor = false;
+            this.btnTim.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnTim.Location = new System.Drawing.Point(914, 54);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(169, 56);
+            this.btnTim.TabIndex = 21;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.UseVisualStyleBackColor = false;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
-            // txtTimKiemLop
+            // txtTimKiem
             // 
-            this.txtTimKiemLop.Location = new System.Drawing.Point(493, 61);
-            this.txtTimKiemLop.Name = "txtTimKiemLop";
-            this.txtTimKiemLop.Size = new System.Drawing.Size(402, 22);
-            this.txtTimKiemLop.TabIndex = 20;
+            this.txtTimKiem.Location = new System.Drawing.Point(493, 61);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(402, 22);
+            this.txtTimKiem.TabIndex = 20;
             // 
             // label8
             // 
@@ -164,45 +181,49 @@
             this.label8.TabIndex = 19;
             this.label8.Text = "Tìm kiếm (Tên / Mã SV / Lớp):";
             // 
-            // btnLamMoiLop
+            // btnLamMoi
             // 
-            this.btnLamMoiLop.BackColor = System.Drawing.Color.Gray;
-            this.btnLamMoiLop.Location = new System.Drawing.Point(270, 444);
-            this.btnLamMoiLop.Name = "btnLamMoiLop";
-            this.btnLamMoiLop.Size = new System.Drawing.Size(194, 59);
-            this.btnLamMoiLop.TabIndex = 18;
-            this.btnLamMoiLop.Text = "Làm mới";
-            this.btnLamMoiLop.UseVisualStyleBackColor = false;
+            this.btnLamMoi.BackColor = System.Drawing.Color.Gray;
+            this.btnLamMoi.Location = new System.Drawing.Point(270, 444);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(194, 59);
+            this.btnLamMoi.TabIndex = 18;
+            this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
-            // btnXoaLop
+            // btnXoa
             // 
-            this.btnXoaLop.BackColor = System.Drawing.Color.Red;
-            this.btnXoaLop.Location = new System.Drawing.Point(44, 444);
-            this.btnXoaLop.Name = "btnXoaLop";
-            this.btnXoaLop.Size = new System.Drawing.Size(194, 59);
-            this.btnXoaLop.TabIndex = 17;
-            this.btnXoaLop.Text = "Xóa";
-            this.btnXoaLop.UseVisualStyleBackColor = false;
+            this.btnXoa.BackColor = System.Drawing.Color.Red;
+            this.btnXoa.Location = new System.Drawing.Point(44, 444);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(194, 59);
+            this.btnXoa.TabIndex = 17;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // btnSuaLop
+            // btnSua
             // 
-            this.btnSuaLop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnSuaLop.Location = new System.Drawing.Point(270, 370);
-            this.btnSuaLop.Name = "btnSuaLop";
-            this.btnSuaLop.Size = new System.Drawing.Size(194, 59);
-            this.btnSuaLop.TabIndex = 16;
-            this.btnSuaLop.Text = "Sửa";
-            this.btnSuaLop.UseVisualStyleBackColor = false;
+            this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSua.Location = new System.Drawing.Point(270, 370);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(194, 59);
+            this.btnSua.TabIndex = 16;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // btnThemLop
+            // btnThem
             // 
-            this.btnThemLop.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnThemLop.Location = new System.Drawing.Point(44, 370);
-            this.btnThemLop.Name = "btnThemLop";
-            this.btnThemLop.Size = new System.Drawing.Size(194, 59);
-            this.btnThemLop.TabIndex = 15;
-            this.btnThemLop.Text = "Thêm";
-            this.btnThemLop.UseVisualStyleBackColor = false;
+            this.btnThem.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnThem.Location = new System.Drawing.Point(44, 370);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(194, 59);
+            this.btnThem.TabIndex = 15;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // groupBox2
             // 
@@ -286,16 +307,6 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Mã ID:";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(497, 120);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1125, 472);
-            this.dataGridView1.TabIndex = 29;
-            // 
             // UCQLLH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -305,9 +316,9 @@
             this.Size = new System.Drawing.Size(1645, 705);
             this.pnlLopHoc.ResumeLayout(false);
             this.pnlLopHoc.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_DSLH)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -316,18 +327,18 @@
 
         private System.Windows.Forms.Panel pnlLopHoc;
         private System.Windows.Forms.Button btnXemDanhSachSV;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button btnTimLop;
-        private System.Windows.Forms.TextBox txtTimKiemLop;
+        private System.Windows.Forms.Label lblPhanTrang;
+        private System.Windows.Forms.Button btnTrangCuoi;
+        private System.Windows.Forms.Button btnTrangSau;
+        private System.Windows.Forms.Button btnTrangTruoc;
+        private System.Windows.Forms.Button btnTrangDau;
+        private System.Windows.Forms.Button btnTim;
+        private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnLamMoiLop;
-        private System.Windows.Forms.Button btnXoaLop;
-        private System.Windows.Forms.Button btnSuaLop;
-        private System.Windows.Forms.Button btnThemLop;
+        private System.Windows.Forms.Button btnLamMoi;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtGhiChu;
         private System.Windows.Forms.TextBox txtTenLop;
@@ -337,6 +348,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_DSLH;
     }
 }

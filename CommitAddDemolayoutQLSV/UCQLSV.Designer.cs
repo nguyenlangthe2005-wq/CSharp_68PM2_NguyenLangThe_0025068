@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlSinhVien = new System.Windows.Forms.Panel();
+            this.dgv_DSSV = new System.Windows.Forms.DataGridView();
             this.lblPhanTrang = new System.Windows.Forms.Label();
             this.btnTrangCuoi = new System.Windows.Forms.Button();
             this.btnTrangSau = new System.Windows.Forms.Button();
@@ -52,10 +53,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgv_DSSV = new System.Windows.Forms.DataGridView();
             this.pnlSinhVien.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSSV)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSinhVien
@@ -81,6 +81,18 @@
             this.pnlSinhVien.Size = new System.Drawing.Size(1643, 705);
             this.pnlSinhVien.TabIndex = 2;
             this.pnlSinhVien.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSinhVien_Paint);
+            // 
+            // dgv_DSSV
+            // 
+            this.dgv_DSSV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_DSSV.Location = new System.Drawing.Point(493, 128);
+            this.dgv_DSSV.Name = "dgv_DSSV";
+            this.dgv_DSSV.RowHeadersWidth = 51;
+            this.dgv_DSSV.RowTemplate.Height = 24;
+            this.dgv_DSSV.Size = new System.Drawing.Size(1098, 462);
+            this.dgv_DSSV.TabIndex = 14;
+            this.dgv_DSSV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DSSV_CellClick);
+            this.dgv_DSSV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DSSV_CellContentClick);
             // 
             // lblPhanTrang
             // 
@@ -321,16 +333,6 @@
             this.label1.Text = "Mã sinh viên:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // dgv_DSSV
-            // 
-            this.dgv_DSSV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_DSSV.Location = new System.Drawing.Point(493, 128);
-            this.dgv_DSSV.Name = "dgv_DSSV";
-            this.dgv_DSSV.RowHeadersWidth = 51;
-            this.dgv_DSSV.RowTemplate.Height = 24;
-            this.dgv_DSSV.Size = new System.Drawing.Size(1098, 462);
-            this.dgv_DSSV.TabIndex = 14;
-            // 
             // UCQLSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -341,9 +343,9 @@
             this.Load += new System.EventHandler(this.UCQLSV_Load);
             this.pnlSinhVien.ResumeLayout(false);
             this.pnlSinhVien.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_DSSV)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_DSSV)).EndInit();
             this.ResumeLayout(false);
 
         }
